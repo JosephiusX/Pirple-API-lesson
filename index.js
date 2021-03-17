@@ -27,7 +27,7 @@ var _data = require('./lib/data'); // requiring data.js from the lib directory
 //     console.log('this was the error' ,err);
 // });
 
-// update file
+// delete  file
 _data.delete('test','newFile', function(err){  
     console.log('this was the error' ,err);
 });
