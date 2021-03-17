@@ -7,10 +7,25 @@ var url = require('url'); // node library for url functions
 var StringDecoder = require('string_decoder').StringDecoder; // node library 
 var config = require('./config'); // requiring the config.js file,  node knows this means config.js
 var fs = require('fs'); // importing node file system library
-var _data = require('./lib/data') // requiring data.js from the lib directory
+var _data = require('./lib/data'); // requiring data.js from the lib directory
 
 // TESTING
-// @TODO delete this
+// @TODO delete  
+
+// // creating file
+// _data.create('test','newFile',{'foo' : 'bar'},function(err){
+//     console.log('this was the error' ,err);
+// });
+
+// // read file
+// _data.read('test','newFile',function(err,data){  // similar to create only with read instead and no need to pass in data
+//     console.log('this was the error' ,err, 'and this was the data',data);
+// });
+
+// update file
+_data.update('test','newFile', {'fizz':'buzz'}, function(err){  
+    console.log('this was the error' ,err, 'and this was the data',data);
+});
 
 
 
