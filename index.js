@@ -7,6 +7,12 @@ var url = require('url'); // node library for url functions
 var StringDecoder = require('string_decoder').StringDecoder; // node library 
 var config = require('./config'); // requiring the config.js file,  node knows this means config.js
 var fs = require('fs'); // importing node file system library
+var _data = require('./lib/data') // requiring data.js from the lib directory
+
+// TESTING
+// @TODO delete this
+
+
 
 // Instantiate the http server
 var httpServer = http.createServer(function(req,res){ // creating a server named server
