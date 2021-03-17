@@ -23,8 +23,13 @@ var _data = require('./lib/data'); // requiring data.js from the lib directory
 // });
 
 // update file
-_data.update('test','newFile', {'fizz':'buzz'}, function(err){  
-    console.log('this was the error' ,err, 'and this was the data',data);
+// _data.update('test','newFile', {'fizz':'buzz'}, function(err,data){  
+//     console.log('this was the error' ,err);
+// });
+
+// update file
+_data.delete('test','newFile', function(err){  
+    console.log('this was the error' ,err);
 });
 
 
