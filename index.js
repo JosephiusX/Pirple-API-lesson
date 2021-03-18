@@ -5,9 +5,11 @@ var http = require('http'); // requiring http lib
 var https = require('https');
 var url = require('url'); // node library for url functions
 var StringDecoder = require('string_decoder').StringDecoder; // node library 
-var config = require('./config'); // requiring the config.js file,  node knows this means config.js
+var config = require('./lib/config'); // requiring the config.js file,  node knows this means config.js
 var fs = require('fs'); // importing node file system library
 // var _data = require('./lib/data'); // requiring data.js from the lib directory
+var handlers = require('./lib/handlers'); // requiring handlers.js from lib dir
+var helpers = require('./lib/helpers');
 
 // TESTING
 // @TODO delete  
@@ -96,7 +98,7 @@ var unifiedServer = function(req, res) {
             'queryStringObject' : queryStringObject,
             'method' : method,
             'headers' : headers,
-            'payload' : buffer
+            'payload' : helpers.parseJsonToObject(buffer)
         };
         
         //route the request to the handler spacified in the router
@@ -123,22 +125,13 @@ var unifiedServer = function(req, res) {
     });
 }
 
-// define handlers
-var handlers = {};
 
-// Ping handler
-handlers.ping = function(data,callback) {
-    callback(200);
-};
-
-// Not found handler
-handlers.notFound = function(data,callback) {
-    callback(404);
-};
 
 // Define a request router
 var router = {
-    'ping' : handlers.ping
+    'ping' : handlers.ping,
+    'users' : handlers.users
 };
 
+// 30:51
 
