@@ -7,7 +7,7 @@ var url = require('url'); // node library for url functions
 var StringDecoder = require('string_decoder').StringDecoder; // node library 
 var config = require('./config'); // requiring the config.js file,  node knows this means config.js
 var fs = require('fs'); // importing node file system library
-var _data = require('./lib/data'); // requiring data.js from the lib directory
+// var _data = require('./lib/data'); // requiring data.js from the lib directory
 
 // TESTING
 // @TODO delete  
@@ -27,10 +27,10 @@ var _data = require('./lib/data'); // requiring data.js from the lib directory
 //     console.log('this was the error' ,err);
 // });
 
-// delete  file
-_data.delete('test','newFile', function(err){  
-    console.log('this was the error' ,err);
-});
+// // delete  file
+// _data.delete('test','newFile', function(err){  
+//     console.log('this was the error' ,err);
+// });
 
 
 
