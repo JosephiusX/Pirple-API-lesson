@@ -9,7 +9,7 @@ var config = require('./lib/config'); // requiring the config.js file,  node kno
 var fs = require('fs'); // importing node file system library
 // var _data = require('./lib/data'); // requiring data.js from the lib directory
 var handlers = require('./lib/handlers'); // requiring handlers.js from lib dir
-var helpers = require('./lib/helpers');
+var helpers = require('./lib/helpers'); // requiring helpers file from lib folder
 
 // TESTING
 // @TODO delete  
@@ -98,7 +98,7 @@ var unifiedServer = function(req, res) {
             'queryStringObject' : queryStringObject,
             'method' : method,
             'headers' : headers,
-            'payload' : helpers.parseJsonToObject(buffer)
+            'payload' : helpers.parseJsonToObject(buffer) // making payload parsed json data instead of raw
         };
         
         //route the request to the handler spacified in the router
@@ -133,5 +133,5 @@ var router = {
     'users' : handlers.users // matching path users to handlers.users
 };
 
-// 30:51
+// 38:53
 
