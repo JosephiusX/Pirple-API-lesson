@@ -130,7 +130,7 @@ var unifiedServer = function(req, res) {
 // Define a request router
 var router = {
     'ping' : handlers.ping,
-    'users' : handlers.users
+    'users' : handlers.users // matching path users to handlers.users
 };
 
 // 30:51
